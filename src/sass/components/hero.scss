@@ -18,7 +18,7 @@
 
             h2 {
                 font-size: 20px;
-                line-height: 10px;
+                line-height: 30px;
             }
 
             button {
@@ -29,6 +29,15 @@
                 color: white;
                 font-size: 25px;
             }
+        }
+
+        button {
+            width: 495px;
+            height: 60px;
+            border-radius: 100px;
+            background: rgb(69, 69, 69);
+            color: white;
+            font-size: 40px;
         }
 
         h2 {
