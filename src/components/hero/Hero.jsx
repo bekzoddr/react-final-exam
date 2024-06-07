@@ -8,15 +8,17 @@ export default function Hero() {
   return (
     <div className="hero container2">
       <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
-        <SwiperSlide className="hero__item">
-          <div className="hero__title">
-            <h2>Скидка 15% на все подвесные светильники </h2>
-            <button>до 5 февраля</button>
-          </div>
-          <div className="hero__image">
-            <img width={453} height={453} src={image} alt="" />
-          </div>
-        </SwiperSlide>
+        {[...Array(5)].map((_, index) => (
+          <SwiperSlide className="hero__item">
+            <div className="hero__title">
+              <h2>Скидка 15% на все подвесные светильники </h2>
+              <button>до 5 февраля</button>
+            </div>
+            <div className="hero__image">
+              <img width={453} height={453} src={image} alt="" />
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

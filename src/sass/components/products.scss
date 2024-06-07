@@ -160,7 +160,7 @@
     }
 
     @media (max-width: 500px) {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
 
         .product__card {
             width: 180px;
@@ -249,6 +249,9 @@
         p {
             font-size: 10 px;
         }
+
+        background-color: transparent;
+        flex-direction: column;
     }
 
     p {

@@ -13,13 +13,22 @@
         background: rgb(242, 242, 242);
         padding: 50px 100px;
 
-        button {
-            width: 495px;
-            height: 60px;
-            border-radius: 100px;
-            background: rgb(69, 69, 69);
-            color: white;
-            font-size: 40px;
+        @media (max-width:740px) {
+            flex-direction: column-reverse;
+
+            h2 {
+                font-size: 20px;
+                line-height: 10px;
+            }
+
+            button {
+                width: 200px;
+                height: 50px;
+                border-radius: 20px;
+                background: rgb(69, 69, 69);
+                color: white;
+                font-size: 25px;
+            }
         }
 
         h2 {
