@@ -1,42 +1,81 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/effect-cube";
-import "swiper/css/pagination";
-import { EffectCube, Pagination } from "swiper/modules";
-import { product } from "../../static";
+import "swiper/css/scrollbar";
+import Loading from "../loading/Loading";
+import { Scrollbar } from "swiper/modules";
+import { FaRegHeart } from "react-icons/fa6";
+import { useGetCategoriesQuery } from "../../context/categoryApi";
+import { useGetProductsQuery } from "../../context/productsApi";
+
 const Products = () => {
+  const {
+    data: categoriesData,
+    isLoading: categoriesLoading,
+    isError: categoriesError,
+  } = useGetCategoriesQuery();
+  const {
+    data: productData,
+    isLoading: productLoading,
+    isError: productError,
+  } = useGetProductsQuery();
+
+  if (categoriesLoading || productLoading) {
+    return <Loading />;
+  }
+
+  if (categoriesError || productError) {
+    return <p>Error loading data...</p>;
+  }
+
   return (
     <div className="container">
+      <div className="product__categories">
+        {categoriesData ? (
+          categoriesData.map((item) => <p key={item.id}>{item.title}</p>)
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
       <div className="products">
-        <div className="product__card">
-          {product.map((item) => (
+        {productData ? (
+          productData.map((item) => (
             <div key={item.id} className="product__card">
               <Swiper
-                effect={"cube"}
-                grabCursor={true}
-                cubeEffect={{
-                  shadow: true,
-                  slideShadows: true,
-                  shadowOffset: 20,
-                  shadowScale: 0.94,
+                scrollbar={{
+                  hide: true,
                 }}
-                pagination={true}
-                modules={[EffectCube, Pagination]}
+                modules={[Scrollbar]}
                 className="mySwiper"
               >
-                {item.image.map((imgSrc, index) => (
-                  <SwiperSlide key={index}>
-                    <img
-                      src={imgSrc}
-                      alt={`${item.title} image ${index + 1}`}
-                    />
-                  </SwiperSlide>
-                ))}
+                {item?.image ? (
+                  item.image.map((imgSrc, index) => (
+                    <SwiperSlide key={index}>
+                      <button>
+                        <FaRegHeart />
+                      </button>
+                      <img
+                        src={imgSrc}
+                        alt={`${item.title} image ${index + 1}`}
+                      />
+                    </SwiperSlide>
+                  ))
+                ) : (
+                  <Loading />
+                )}
               </Swiper>
+              <div className="card__body">
+                <h2>{item.title}</h2>
+                <div className="prices">
+                  <s>${(item.price * 2 - item.price * 1.5).toFixed(2)}</s>
+                  <b>${item.price}</b>
+                </div>
+              </div>
             </div>
-          ))}
-        </div>
+          ))
+        ) : (
+          <Loading />
+        )}
       </div>
     </div>
   );

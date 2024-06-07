@@ -2,6 +2,7 @@
 @import "./components/navbar";
 @import "./components/hero";
 @import "./components/products";
+@import "./components/loading";
 
 * {
     margin: 0;
@@ -39,4 +40,22 @@ button {
     outline: none;
     border: none;
     cursor: pointer;
+}
+
+
+
+form {
+    input {
+        padding: 5px;
+    }
+
+    button {
+        padding: 6.5px;
+        background-color: dodgerblue;
+        color: white;
+    }
+
+    input:focus {
+        outline: 1px solid dodgerblue;
+    }
 }

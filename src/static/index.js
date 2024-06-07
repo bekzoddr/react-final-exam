@@ -9,56 +9,230 @@ import infoImage2 from "../assets/images/info-2.svg";
 import infoImage3 from "../assets/images/info-3.svg";
 import infoImage4 from "../assets/images/info-4.svg";
 
-import cardimg1 from "../assets/images/card-image1.jpg";
-import cardimg2 from "../assets/images/card-image2.webp";
-import cardimg3 from "../assets/images/card-image3.jpg";
-import cardimg4 from "../assets/images/card-image4.webp";
-
-import cardimg5 from "../assets/images/card-image5.jpg";
-import cardimg6 from "../assets/images/card-image6.jpeg";
-import cardimg7 from "../assets/images/card-image7.jpg";
-import cardimg8 from "../assets/images/card-image8.webp";
-
-import cardimg9 from "../assets/images/card-image9.webp";
-import cardimg10 from "../assets/images/card-image10.webp";
-import cardimg11 from "../assets/images/card-image11.webp";
-import cardimg12 from "../assets/images/card-image12.webp";
-
-import cardimg13 from "../assets/images/card-image13.jpg";
-import cardimg14 from "../assets/images/card-image14.jpg";
-import cardimg15 from "../assets/images/card-image15.jpg";
-import cardimg16 from "../assets/images/card-image16.webp";
-
 export const product = [
   {
+    title: "iPhone 14 Pro Max",
+    description:
+      "The latest iPhone 14 Pro Max with advanced features, stunning design, and powerful performance. Stay ahead with cutting-edge technology.",
+    price: 1099,
+    category: "Smartphones",
     id: 1,
-    title: "Iphone 14pro max",
-    image: [cardimg1, cardimg2, cardimg3, cardimg4],
+    image: [
+      "https://i.postimg.cc/wxkN7rtn/card-image1.jpg",
+      "https://i.postimg.cc/pr0ykgzT/card-image2.webp",
+      "https://i.postimg.cc/Gh249mns/card-image3.jpg",
+      "https://i.postimg.cc/CKy5vCBj/card-image4.webp",
+    ],
   },
   {
-    id: 2,
     title: "Playstation 5",
-    image: [cardimg5, cardimg6, cardimg7, cardimg8],
+    description:
+      "The ultimate gaming console with immersive graphics and fast loading times.",
+    price: 499,
+    category: "Gaming Consoles",
+    id: 2,
+    image: [
+      "https://i.postimg.cc/ZnDK66zv/card-image5.jpg",
+      "https://i.postimg.cc/m2trBp7Y/card-image6.jpg",
+      "https://i.postimg.cc/MZtYhHYc/card-image7.jpg",
+      "https://i.postimg.cc/0Nfvp7p5/card-image8.webp",
+    ],
   },
   {
+    title: "Samsung s24 ultra",
+    description:
+      "The Samsung S24 Ultra, a powerful smartphone with exceptional camera capabilities.",
+    price: 1199,
+    category: "Smartphones",
     id: 3,
-    title: "Xbox Series X",
-    image: [cardimg9, cardimg10, cardimg11, cardimg12],
+    image: [
+      "https://i.postimg.cc/2SxjwpYf/card-image9.webp",
+      "https://i.postimg.cc/SsHmsk6c/card-image10.webp",
+      "https://i.postimg.cc/d3MKFnFB/card-image11.webp",
+      "https://i.postimg.cc/wTpdbW0x/card-image12.webp",
+    ],
   },
   {
+    title: "Macbook pro",
+    description:
+      "The MacBook Pro, a high-performance laptop for professionals and creatives.",
+    price: 2399,
+    category: "Laptops",
     id: 4,
-    title: "Nintendo Switch",
-    image: [cardimg13, cardimg14, cardimg15, cardimg16],
+    image: [
+      "https://i.postimg.cc/W3kQ5rZJ/card-image13.jpg",
+      "https://i.postimg.cc/DyFtcSw8/card-image14.jpg",
+      "https://i.postimg.cc/5tF7JJ2h/card-image15.jpg",
+      "https://i.postimg.cc/Z5XHVQxV/card-image16.webp",
+    ],
   },
-];
-
-export const infos = [
-  "О компании",
-  "Доставка и оплата",
-  "Возврат",
-  "Гарантии",
-  "Контакты",
-  "Блог",
+  {
+    title: 'Samsung 75" 4K UHD Smart TV',
+    description:
+      'Experience stunning 4K UHD resolution with the Samsung 75" Smart TV.',
+    price: 1499,
+    category: "TV",
+    id: 5,
+    image: [
+      "https://images.samsung.com/is/image/samsung/p6pim/za/ua75cu7000kxxa/gallery/za-uhd-4k-tv-ua75cu7000kxxa-front-black-538835370?$1300_1038_PNG$",
+      "https://images.samsung.com/is/image/samsung/p6pim/za/ua75cu7000kxxa/gallery/za-uhd-4k-tv-ua75cu7000kxxa-detail-black-538835368?$684_547_PNG$",
+      "https://images.samsung.com/is/image/samsung/p6pim/za/ua75cu7000kxxa/gallery/za-uhd-4k-tv-ua75cu7000kxxa-ua--cu----kxxa-538835358?$684_547_PNG$",
+      "https://images.samsung.com/is/image/samsung/p6pim/za/ua75cu7000kxxa/gallery/za-uhd-4k-tv-ua75cu7000kxxa-ua--cu----kxxa-538835366?$684_547_PNG$",
+    ],
+  },
+  {
+    title: 'LG 65" OLED TV',
+    description:
+      'Enjoy perfect blacks and stunning colors with the LG 65" OLED TV.',
+    price: 1999,
+    category: "TV",
+    id: 6,
+    image: [
+      "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/48508297-ed6e-4903-97e9-f14fecc9c724/OLED65B3PUA_gallery_01_front_3000x3000",
+      "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/c836998f-b806-4579-b9fb-a2dd1d166e3d/OLED65B3PUA_gallery_02_angle-right_3000x3000",
+      "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/4de68143-b6ae-4c34-a005-201ffc44d0a1/OLED65B3PUA_gallery_03_angle-left_3000x3000",
+      "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/44fdeffa-8e4d-4525-b948-f7f6f037cc24/OLED65B3PUA_gallery_05_Self-lit-OLED-4K_3000x3000",
+    ],
+  },
+  {
+    title: "Sony WH-1000XM4 Wireless Headphones",
+    description:
+      "Industry-leading noise canceling with the Sony WH-1000XM4 headphones.",
+    price: 349,
+    category: "Headphones",
+    id: 7,
+    image: [
+      "https://m.media-amazon.com/images/I/51DkbWZIg+L._AC_SX300_SY300_.jpg",
+      "https://m.media-amazon.com/images/I/61Jl6XHrIqL._AC_SX466_.jpg",
+      "https://m.media-amazon.com/images/I/81ybhKGmMxL._AC_SX466_.jpg",
+      "https://m.media-amazon.com/images/I/81ELPf7zVIL._AC_SX466_.jpg",
+    ],
+  },
+  {
+    title: "Bose QuietComfort 35 II",
+    description:
+      "Bose QuietComfort 35 II headphones with world-class noise cancellation.",
+    price: 299,
+    category: "Headphones",
+    id: 8,
+    image: [
+      "https://assets.bose.com/content/dam/Bose_DAM/Web/consumer_electronics/global/products/headphones/qc35_ii/images/qc35_ii_product_page_hotspot_silo_1x1.psd/jcr:content/renditions/cq5dam.web.1920.1920.jpeg",
+      "https://assets.bose.com/content/dam/Bose_DAM/Web/consumer_electronics/global/products/headphones/qc35_ii/images/qc35_ii_product_page_blk_and_silver_silo_3x2.psd/jcr:content/renditions/cq5dam.web.1920.1920.png",
+      "https://m.media-amazon.com/images/I/71GGYcUQvnL._AC_SX466_.jpg",
+      "https://m.media-amazon.com/images/I/71dxdk4vXCL._AC_SX466_.jpg",
+    ],
+  },
+  {
+    title: "JBL Flip 5 Waterproof Portable Bluetooth Speaker",
+    description:
+      "Take your tunes on the go with the powerful JBL Flip 5 Bluetooth speaker.",
+    price: 129,
+    category: "Speakers",
+    id: 9,
+    image: [
+      "https://mm.jbl.com/dw/image/v2/AAUJ_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw8018b0cf/JBL_Flip5_Product%20Photo_Hero_Midnight%20Black.png?sw=537&sfrm=png",
+      "https://mm.jbl.com/dw/image/v2/AAUJ_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw376d47ef/JBL_Flip5_Acc_Black_006-1605x1605px_D1.png?sw=537&sfrm=png",
+      "https://mm.jbl.com/dw/image/v2/AAUJ_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dwe8d235e6/JBL_Flip5_Product%20Photo_Side_MidnightBlack-1605x1605-DS3.png?sw=537&sfrm=png",
+      "https://mm.jbl.com/dw/image/v2/AAUJ_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw965b7e58/JBL_Flip5_Product%20Photo_Back_Midnight%20Black.png?sw=537&sfrm=png",
+    ],
+  },
+  {
+    title: "Sony SRS-XB43 Extra Bass Wireless Portable Speaker",
+    description:
+      "Sony SRS-XB43 with deep bass and long battery life for all-day listening.",
+    price: 179,
+    category: "Speakers",
+    id: 10,
+    image: [
+      "https://www.sony.com/image/0d9506a30d9060a1dca5b9438ef8ea39?fmt=pjpeg&wid=1400&bgcolor=F1F5F9&bgc=F1F5F9",
+      "https://www.sony.com/image/c0ebc50847b507a1e788c08c0530f599?fmt=pjpeg&wid=165&bgcolor=FFFFFF&bgc=FFFFFF",
+      "https://www.sony.com/image/b1330abf165eeafc3035671480e5bda5?fmt=jpeg&wid=720&qlt=85",
+      "https://www.sony.com/image/fa6936e97147d7b6e3a557b815e2d281?fmt=png-alpha&wid=720",
+    ],
+  },
+  {
+    title: "Stylish Backpack",
+    description: "A sleek and versatile backpack for everyday use.",
+    price: 79,
+    category: "Bags",
+    id: 11,
+    image: [
+      "https://cdn-images.farfetch-contents.com/18/63/98/13/18639813_41036638_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/18/63/98/13/18639813_41036639_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/18/63/98/13/18639813_41036640_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/18/63/98/13/18639813_41036633_1000.jpg",
+    ],
+  },
+  {
+    title: "Classic Leather Watch",
+    description:
+      "A timeless piece of elegance, perfect for any occasion. This luxurious watch features a genuine leather strap and precision quartz movement.",
+    price: 199,
+    category: "Watches",
+    id: 12,
+    image: [
+      "https://m.media-amazon.com/images/I/61hjE11SwZL._AC_UL1001_.jpg",
+      "https://m.media-amazon.com/images/I/71+C3Jo7nmL._AC_SL1500_.jpg",
+      "https://m.media-amazon.com/images/I/61XHqtEigfS._AC_UY900_.jpg",
+      "https://images-eu.ssl-images-amazon.com/images/I/61DomKgHfzL._AC_SR462,693_.jpg",
+    ],
+  },
+  {
+    title: "Samsung Galaxy Watch 5 Pro, 45 мм R920",
+    description:
+      "Make a statement with this elegant rose gold watch. Featuring a minimalist design and durable stainless steel construction, it adds a touch of sophistication to any outfit.",
+    price: 249,
+    category: "Watches",
+    id: 13,
+    image: [
+      "https://images.uzum.uz/cn6t9o925kub33f3opgg/original.jpg",
+      "https://images.uzum.uz/cn6t9ojifoubkc6s01i0/original.jpg",
+      "https://images.uzum.uz/cn6t9o925kub33f3opj0/original.jpg",
+      "https://images.uzum.uz/cn6t9j1s99ouqbfuidr0/original.jpg",
+    ],
+  },
+  {
+    title: "Minimalist Black Watch",
+    description:
+      "Sleek and modern, this minimalist black watch is perfect for everyday wear. With its clean lines and understated design, it complements any style effortlessly.",
+    price: 149,
+    category: "Watches",
+    id: 14,
+    image: [
+      "https://cdn-images.farfetch-contents.com/18/35/86/73/18358673_39630072_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/18/35/86/73/18358673_39630064_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/18/35/86/73/18358673_39630071_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/18/35/86/73/18358673_39629305_1000.jpg",
+    ],
+  },
+  {
+    title: "TOM FORD leather wash bag",
+    description:
+      "This black TOM FORD wash bag is crafted from durable grained leather with two zipped compartments for easy organisation. It’s fully lined and fitted with a reinforced strap at the end.",
+    price: 79,
+    category: "Bags",
+    id: 15,
+    image: [
+      "https://cdn-images.farfetch-contents.com/22/33/07/64/22330764_52297115_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/22/33/07/64/22330764_52313773_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/18/63/98/13/18639813_41036640_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/18/63/98/13/18639813_41036633_1000.jpg",
+    ],
+  },
+  {
+    title: "Leather Messenger Bag",
+    description:
+      "Stay organized on the go with this stylish leather messenger bag. Perfect for work or travel, it features multiple pockets and a padded laptop compartment.",
+    price: 129,
+    category: "Bags",
+    id: 16,
+    image: [
+      "https://cdn-images.farfetch-contents.com/20/54/53/56/20545356_50670896_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/20/54/53/56/20545356_50670907_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/20/54/53/56/20545356_50670906_1000.jpg",
+      "https://cdn-images.farfetch-contents.com/20/54/53/56/20545356_50670903_1000.jpg",
+    ],
+  },
 ];
 
 export const categories = [
