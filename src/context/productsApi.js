@@ -1,3 +1,5 @@
+// productsApi.js
+
 import { api } from "./api";
 
 export const productApi = api.injectEndpoints({
@@ -19,7 +21,7 @@ export const productApi = api.injectEndpoints({
     }),
     updateProduct: build.mutation({
       query: ({ _id, body }) => ({
-        url: `/products`,
+        url: `/products/${_id}`,
         method: "PATCH",
         body,
       }),
@@ -27,7 +29,7 @@ export const productApi = api.injectEndpoints({
     }),
     deleteProduct: build.mutation({
       query: (id) => ({
-        url: `/products`,
+        url: `/products/${id}`,
         method: "DELETE",
       }),
       invalidatesTags: ["products"],

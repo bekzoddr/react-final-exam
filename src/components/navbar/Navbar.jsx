@@ -134,7 +134,7 @@ const Navbar = () => {
         </div>
       </div>
       {menuOpen && (
-        <div className="overlay show" onClick={handleMenuClick}></div>
+        <div className="nav__overlay show" onClick={handleMenuClick}></div>
       )}
     </nav>
   );

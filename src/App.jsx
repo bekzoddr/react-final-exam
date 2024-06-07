@@ -9,17 +9,24 @@ import Return from "./pages/return/Return";
 import NotFound from "./pages/notFound/NotFound";
 import Shipping from "./pages/shipping/Shipping";
 import Wishlist from "./pages/wishlist/Wishlist";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Admin from "./pages/admin/Admin";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Auth from "./pages/auth/Auth";
 import Login from "./pages/login/Login";
+import CreateCategory from "./pages/admin/CreateCategory";
+import ManageCategory from "./pages/admin/ManageCategory";
+import CreateProduct from "./pages/admin/CreateProduct";
+import ManageProducts from "./pages/admin/ManageProducts";
 function App() {
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith("/admin");
+
   return (
     <main className="app container">
-      <Navbar />
+      {!isAdminRoute && <Navbar />}
       <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -33,9 +40,14 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Auth />}>
-          <Route path="/admin" element={<Admin />} />
+        {/* <Route path="/" element={<Auth />}> */}
+        <Route path="/admin" element={<Admin />}>
+          <Route path="/admin/create-product" element={<CreateProduct />} />
+          <Route path="/admin/manage-products" element={<ManageProducts />} />
+          <Route path="/admin/create-category" element={<CreateCategory />} />
+          <Route path="/admin/manage-category" element={<ManageCategory />} />
         </Route>
+        {/* </Route> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </main>

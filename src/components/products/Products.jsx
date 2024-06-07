@@ -46,11 +46,12 @@ const Products = () => {
                   hide: true,
                 }}
                 modules={[Scrollbar]}
-                className="mySwiper"
+                className="product__image"
               >
+                +{" "}
                 {item?.image ? (
                   item.image.map((imgSrc, index) => (
-                    <SwiperSlide key={index}>
+                    <SwiperSlide className="card__image" key={index}>
                       <button>
                         <FaRegHeart />
                       </button>
@@ -63,6 +64,7 @@ const Products = () => {
                 ) : (
                   <Loading />
                 )}
+                +{" "}
               </Swiper>
               <div className="card__body">
                 <h2>{item.title}</h2>

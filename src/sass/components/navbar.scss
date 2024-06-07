@@ -390,7 +390,7 @@
     width: 150px;
 }
 
-.overlay {
+.nav__overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -401,6 +401,6 @@
     display: none;
 }
 
-.overlay.show {
+.nav__overlay.show {
     display: block;
 }

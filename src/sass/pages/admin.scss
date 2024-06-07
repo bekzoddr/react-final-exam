@@ -1,0 +1,153 @@
+.admin {
+    display: flex;
+
+    .admin__title {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin: 15px 0 15px 10px;
+
+        button {
+            background-color: transparent;
+            font-size: 25px;
+            padding: 5px;
+
+            a {
+
+                color: white;
+            }
+        }
+    }
+
+    h2 {
+        color: rgb(255, 255, 255);
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 38px;
+        letter-spacing: 0%;
+        text-align: left;
+    }
+
+    &__dashboard {
+        background: rgb(69, 69, 69);
+        width: 400px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+.admin__routes {
+    display: flex;
+    flex-direction: column;
+
+    a {
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 25px;
+        letter-spacing: 0%;
+        text-align: left;
+        padding: 7px 15px;
+
+        &.active {
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+
+
+.create__categories {
+    form {
+
+        input {
+            width: 300px;
+            padding: 13px;
+        }
+
+        button {
+            padding: 15px;
+
+        }
+
+        margin-left: 200px;
+        margin-bottom: 60px;
+    }
+}
+
+.categoriess {
+    margin-left: 200px;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+
+    .category__task {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 10px;
+        margin-bottom: 2px;
+        border: 1px solid dodgerblue;
+        width: 600px;
+
+        p {
+            width: 500px;
+        }
+
+        button {
+            background-color: transparent;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .overlay__content {
+        position: relative;
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        h2 {
+            color: black;
+            font-size: 20px;
+        }
+
+        .cancel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: transparent;
+            color: red;
+            font-size: 20px;
+        }
+    }
+}
+
+.create__products {
+    margin-left: 200px;
+
+    form {
+        width: 800px;
+
+        display: flex;
+        // flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
