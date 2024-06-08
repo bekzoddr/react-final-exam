@@ -21,13 +21,13 @@ const Admin = () => {
           </button>
           <h2>Admin</h2>
         </div>
-        {/* <button onClick={handleClick}>Logout</button> */}
         <div className="admin__routes">
           <NavLink to={"/admin/create-product"}>Create product</NavLink>
           <NavLink to={"/admin/manage-products"}>Manage product</NavLink>
           <NavLink to={"/admin/create-category"}>Create category</NavLink>
           <NavLink to={"/admin/manage-category"}>Manage category</NavLink>
         </div>
+        <button onClick={handleClick}>Logout</button>
       </div>
       <div className="admin__item container">
         <Outlet />
