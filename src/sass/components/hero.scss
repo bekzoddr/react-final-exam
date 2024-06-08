@@ -35,9 +35,10 @@
 
         @media (max-width:740px) {
             flex-direction: column-reverse;
+            padding: 20px;
 
             img {
-                max-width: 250px;
+                max-width: 200px;
             }
 
             p {
@@ -252,6 +253,10 @@
 }
 
 @media (max-width: 480px) {
+    body {
+        overflow-x: hidden;
+    }
+
     .category__item {
         width: 300px;
     }
