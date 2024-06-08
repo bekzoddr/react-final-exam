@@ -5,7 +5,6 @@ import { RiMenu2Fill } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa6";
 import { BsCart } from "react-icons/bs";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import icon from "../../assets/images/strategy__icon.svg";
 import cancel from "../../assets/images/cancel.svg";
 import menu from "../../assets/images/menu.svg";
@@ -88,7 +87,7 @@ const Navbar = () => {
             <input type="text" placeholder="Поиск по товарам" />
             <CiSearch className="search__icon" />
           </div>
-          <div className={`sidebar ${menuOpen ? "show" : ""}`}>
+          <div className={`sidebar ${menuOpen ? "show" : "hide"}`}>
             <ul className="nav__infos">
               <li>
                 <NavLink to={"/about"} onClick={closeMenu}>
