@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Hero from "../../components/hero/Hero";
 import Categories from "../../components/categories/Categories";
 import Products from "../../components/products/Products";
+import Cards from "../../components/cards/Cards";
 
 const Home = () => {
   const [count, setCount] = useState(4);
@@ -26,6 +27,11 @@ const Home = () => {
       <br />
       <br />
       <Products />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Cards />
     </div>
   );
 };

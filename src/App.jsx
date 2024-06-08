@@ -20,13 +20,17 @@ import CreateCategory from "./pages/admin/CreateCategory";
 import ManageCategory from "./pages/admin/ManageCategory";
 import CreateProduct from "./pages/admin/CreateProduct";
 import ManageProducts from "./pages/admin/ManageProducts";
+import Footer from "./components/footer/Footer";
 function App() {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith("/admin");
 
   return (
-    <main className="app container">
+    <main className="app">
       {!isAdminRoute && <Navbar />}
+      <br />
+      <br />
+      <br />
       <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -50,6 +54,10 @@ function App() {
         {/* </Route> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <br />
+      <br />
+      <br />
+      <Footer />
     </main>
   );
 }

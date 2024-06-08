@@ -7,7 +7,7 @@ import { Scrollbar } from "swiper/modules";
 import { FaRegHeart } from "react-icons/fa6";
 import { useGetCategoriesQuery } from "../../context/categoryApi";
 import { useGetProductsQuery } from "../../context/productsApi";
-
+import { brm } from "number-brm";
 const Products = () => {
   const {
     data: categoriesData,
@@ -69,8 +69,13 @@ const Products = () => {
               <div className="card__body">
                 <h2>{item.title}</h2>
                 <div className="prices">
-                  <s>${(item.price * 2 - item.price * 1.5).toFixed(2)}</s>
-                  <b>${item.price}</b>
+                  <s>
+                    $
+                    {(item.price.brm("string") * 2 - item.price * 1.5).toFixed(
+                      2
+                    )}
+                  </s>
+                  <b>${item.price.brm("string")}</b>
                 </div>
               </div>
             </div>

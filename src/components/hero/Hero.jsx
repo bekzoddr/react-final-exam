@@ -9,13 +9,13 @@ export default function Hero() {
     <div className="hero container2">
       <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
         {[...Array(5)].map((_, index) => (
-          <SwiperSlide className="hero__item">
+          <SwiperSlide key={index} className="hero__item">
             <div className="hero__title">
-              <h2>Скидка 15% на все подвесные светильники </h2>
+              <p>Скидка 15% на все подвесные светильники </p>
               <button>до 5 февраля</button>
             </div>
             <div className="hero__image">
-              <img width={453} height={453} src={image} alt="" />
+              <img src={image} alt="" />
             </div>
           </SwiperSlide>
         ))}

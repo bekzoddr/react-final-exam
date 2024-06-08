@@ -1,10 +1,13 @@
 .hero {
+    margin-inline: 100px;
+
     .swiper {
         width: 100%;
         height: 100%;
     }
 
     .hero__item {
+        padding: 50px;
         border: 1px solid #ddd;
         display: flex;
         justify-content: space-around;
@@ -13,11 +16,32 @@
         background: rgb(242, 242, 242);
         padding: 50px 100px;
 
+        button {
+            width: 495px;
+            height: 60px;
+            border-radius: 100px;
+            background: rgb(69, 69, 69);
+            color: white;
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 87px;
+            letter-spacing: 0%;
+            text-align: left;
+        }
+
         @media (max-width:740px) {
             flex-direction: column-reverse;
 
-            h2 {
-                font-size: 20px;
+            img {
+                max-width: 250px;
+            }
+
+            p {
+                font-size: 30px;
                 line-height: 30px;
             }
 
@@ -31,22 +55,7 @@
             }
         }
 
-        button {
-            width: 495px;
-            height: 60px;
-            border-radius: 100px;
-            background: rgb(69, 69, 69);
-            color: white;
-            font-size: 40px;
-        }
 
-        h2 {
-            font-size: 64px;
-            font-weight: 700;
-            line-height: 87px;
-            letter-spacing: 0%;
-            text-align: left;
-        }
     }
 
     .swiper-slide img {
@@ -101,11 +110,10 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     place-items: center;
-    margin-left: -85px;
 }
 
 .category__item {
-    width: 420px;
+    width: 350px;
     height: 250px;
     border-radius: 20px;
     display: flex;
@@ -244,6 +252,10 @@
 }
 
 @media (max-width: 480px) {
+    .category__item {
+        width: 300px;
+    }
+
     .categories__title h2 {
         font-size: 24px;
         line-height: 32px;

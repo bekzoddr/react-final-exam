@@ -49,14 +49,7 @@ const ManageProducts = () => {
       {isLoading && <Loading />}
       {isError && <p>Error loading products...</p>}
       {products && (
-        <div
-          className="products__wrapper"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "16px",
-          }}
-        >
+        <div className="products__wrapper">
           {products.map((product) => (
             <div key={product.id} className="product__managed">
               <div className="product__card">
