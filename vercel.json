@@ -1,6 +1,5 @@
 {
-  "rewrites": [
-    { "source": "/old-route", "destination": "/new-route" },
-    { "source": "/api/(.*)", "destination": "/api/index.js" }
-  ]
+    "revriters":[
+        {"sources":"/(.*)", "destination":"/"}
+    ]
 }
