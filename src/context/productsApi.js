@@ -1,5 +1,3 @@
-// productsApi.js
-
 import { api } from "./api";
 
 export const productApi = api.injectEndpoints({
@@ -11,6 +9,7 @@ export const productApi = api.injectEndpoints({
       }),
       providesTags: ["products"],
     }),
+
     createProduct: build.mutation({
       query: (body) => ({
         url: "/products",
@@ -19,6 +18,7 @@ export const productApi = api.injectEndpoints({
       }),
       invalidatesTags: ["products"],
     }),
+
     updateProduct: build.mutation({
       query: ({ _id, body }) => ({
         url: `/products/${_id}`,
@@ -27,12 +27,20 @@ export const productApi = api.injectEndpoints({
       }),
       invalidatesTags: ["products"],
     }),
+
     deleteProduct: build.mutation({
       query: (id) => ({
         url: `/products/${id}`,
         method: "DELETE",
       }),
       invalidatesTags: ["products"],
+    }),
+
+    getProductById: build.query({
+      query: (id) => ({
+        url: `/products/${id}`,
+      }),
+      providesTags: ["products"],
     }),
   }),
 });
@@ -42,4 +50,5 @@ export const {
   useDeleteProductMutation,
   useCreateProductMutation,
   useUpdateProductMutation,
+  useGetProductByIdQuery,
 } = productApi;

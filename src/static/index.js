@@ -294,3 +294,88 @@ export const info = [
     more: "Более 1000 товаров",
   },
 ];
+
+export const units = [
+  {
+    id: 1,
+    title: "Цвет",
+    value: "Желтый",
+    background: "rgb(255, 255, 255)",
+  },
+  {
+    id: 2,
+    title: "Год",
+    value: "2016",
+    background: "rgb(248, 248, 248)",
+  },
+  {
+    id: 3,
+    title: "Диаметр колеса",
+    value: "27.5",
+    background: "rgb(255, 255, 255)",
+  },
+  {
+    id: 4,
+    title: "Материал рамы",
+    value: "Карбон",
+    background: "rgb(248, 248, 248)",
+  },
+  {
+    id: 5,
+    title: "Размер",
+    value: "L",
+    background: "rgb(255, 255, 255)",
+  },
+  {
+    id: 6,
+    title: "Страна",
+    value: "Швейцария",
+    background: "rgb(248, 248, 248)",
+  },
+  {
+    id: 7,
+    title: "Производитель",
+    value: "Scott",
+    background: "rgb(255, 255, 255)",
+  },
+  {
+    id: 8,
+    title: "Покрышки",
+    value:
+      "Schwalbe Rocket Ron EVO / 2.1 127EPI Kevlar Bead Tubeless Easy / PaceStar compound",
+    background: "rgb(248, 248, 248)",
+  },
+  {
+    id: 9,
+    title: "Рама",
+    value:
+      "Scale Carbon / НМХ-технология / технология ІМР / Коническая рулевая труба / ВВ92 / Технология SDS / Дропауты IDS SL",
+    background: "rgb(255, 255, 255)",
+  },
+  {
+    id: 10,
+    title: "Подседельный Штырь",
+    value:
+      "Ritchey WCS 700 Series: Carbon Link FlexLogic / 31.6mm 900 Series: Carbon 2B SDS/34.9mm",
+    background: "rgb(248, 248, 248)",
+  },
+  {
+    id: 11,
+    title: "Седло",
+    value: "Ritchey WCS Streem V3 Titanium rails",
+    background: "rgb(255, 255, 255)",
+  },
+  {
+    id: 12,
+    title: "Вилка",
+    value:
+      "Rock Shox SID RL3 Air / демпфер DNA3 3-режима / 15mm QR axle / коническая рулевая труба / Удалённая блокировка, регулировка отскока / ход 100mm",
+    background: "rgb(248, 248, 248)",
+  },
+  {
+    id: 13,
+    title: "Модель",
+    value: "Scott Scale",
+    background: "rgb(255, 255, 255)",
+  },
+];

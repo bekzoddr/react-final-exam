@@ -8,6 +8,8 @@ import { FaRegHeart } from "react-icons/fa6";
 import { useGetCategoriesQuery } from "../../context/categoryApi";
 import { useGetProductsQuery } from "../../context/productsApi";
 import { brm } from "number-brm";
+import { Link } from "react-router-dom";
+
 const Products = () => {
   const {
     data: categoriesData,
@@ -48,7 +50,6 @@ const Products = () => {
                 modules={[Scrollbar]}
                 className="product__image"
               >
-                +{" "}
                 {item?.image ? (
                   item.image.map((imgSrc, index) => (
                     <SwiperSlide className="card__image" key={index}>
@@ -64,10 +65,11 @@ const Products = () => {
                 ) : (
                   <Loading />
                 )}
-                +{" "}
               </Swiper>
               <div className="card__body">
-                <h2>{item.title}</h2>
+                <Link to={`/detail/${item?.id}`}>
+                  <h2>{item.title}</h2>
+                </Link>
                 <div className="prices">
                   <s>
                     $

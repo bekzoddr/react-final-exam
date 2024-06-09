@@ -6,6 +6,7 @@
 @import "./components/cards";
 @import "./components/footer";
 @import "./pages/admin";
+@import "./pages/detail";
 
 * {
     margin: 0;
@@ -23,7 +24,7 @@ body {
     padding: 0 20px;
 }
 
-.container-2 {
+.container2 {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;

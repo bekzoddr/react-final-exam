@@ -37,7 +37,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/detail" element={<Details />} />
+        <Route path="/detail/:id" element={<Details />} />
         <Route path="/garant" element={<Garant />} />
         <Route path="/return" element={<Return />} />
         <Route path="/shipping" element={<Shipping />} />
@@ -57,7 +57,7 @@ function App() {
       <br />
       <br />
       <br />
-      <Footer />
+      {!isAdminRoute && <Footer />}
     </main>
   );
 }
