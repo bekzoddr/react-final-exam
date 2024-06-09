@@ -48,13 +48,12 @@ const Navbar = () => {
               <img width={19} src={icon} alt="" />
               Сравнение
             </li>
-            <li>
-              <BsCart className="nav__icon" />
-              Корзина
-            </li>
-            <li>
-              <NavLink to={"/login"}>login</NavLink>
-            </li>
+            <NavLink to={"/cart"}>
+              <li>
+                <BsCart className="nav__icon" />
+                Корзина
+              </li>
+            </NavLink>
           </ul>
         </div>
         <div className="navbar__responsive">

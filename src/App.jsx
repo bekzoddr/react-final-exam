@@ -28,10 +28,9 @@ function App() {
   return (
     <main className="app">
       {!isAdminRoute && <Navbar />}
-      <br />
-      <br />
-      <br />
-      <br />
+      {[...Array(10)].map((_, index) => (
+        <br key={index} />
+      ))}
       <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />

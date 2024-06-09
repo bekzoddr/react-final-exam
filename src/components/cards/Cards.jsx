@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { MdOutlineArrowOutward } from "react-icons/md";
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
-import { array, array2 } from "../../static";
+import { array } from "../../static";
+import BlogCards from "../blog__cards/BlogCards";
 
 const Cards = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -59,26 +59,7 @@ const Cards = () => {
             <FaArrowRightLong />
           </button>
         </div>
-        <div className="blog__cards">
-          {array2?.map((el, index) => {
-            return (
-              <div key={index} className="blog__card">
-                <div className="card__image">
-                  <img src={el} alt="card" />
-                </div>
-                <div className="card__body">
-                  <div className="card__title">
-                    <>
-                      <b>Как правильно освещать дом снаружи?</b>
-                    </>
-                    <MdOutlineArrowOutward className="card__icon" />
-                  </div>
-                  <p>01.01.2024</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <BlogCards />
       </section>
       <section>
         <div className="text">

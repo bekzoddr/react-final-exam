@@ -8,6 +8,11 @@
 @import "./pages/admin";
 @import "./pages/detail";
 @import "./pages/about";
+@import "./pages/cart";
+
+html {
+    scroll-behavior: smooth;
+}
 
 * {
     margin: 0;

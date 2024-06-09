@@ -1,21 +1,23 @@
 import React, { useState } from "react";
-// import { useGetProductsQuery } from "../../context/api";
 import Hero from "../../components/hero/Hero";
 import Categories from "../../components/categories/Categories";
 import Products from "../../components/products/Products";
 import Cards from "../../components/cards/Cards";
+import { useGetProductsQuery } from "../../context/productsApi";
+import Loading from "../../components/loading/Loading";
 
 const Home = () => {
   const [count, setCount] = useState(4);
-  // const { data, error, isLoading } = useGetProductsQuery(count);
 
-  // if (!data) {
-  // return <div>Loading...</div>;
-  // }
+  const {
+    data: productData,
+    isLoading: productLoading,
+    isError: productError,
+  } = useGetProductsQuery();
 
-  // if (error) {
-  //   return <div>Error: {error.message}</div>;
-  // }
+  if (productLoading) {
+    return <Loading />;
+  }
 
   return (
     <div>
@@ -26,7 +28,7 @@ const Home = () => {
       <br />
       <br />
       <br />
-      <Products />
+      <Products data={productData} />
       <br />
       <br />
       <br />
