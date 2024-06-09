@@ -19,7 +19,7 @@ const Products = () => {
   const dispatch = useDispatch();
   const wishes = useSelector((state) => state.wishlist.value) || [];
   const cart = useSelector((state) => state.cart.value);
-  const [displayCount, setDisplayCount] = useState(8); // State to keep track of the number of cards to display
+  const [displayCount, setDisplayCount] = useState(8);
 
   const {
     data: categoriesData,
@@ -33,7 +33,6 @@ const Products = () => {
   } = useGetProductsQuery();
 
   const handleLoadMore = () => {
-    // Increase the number of cards to display by 4
     setDisplayCount(displayCount + 4);
   };
 
@@ -115,14 +114,13 @@ const Products = () => {
           <Loading />
         )}
       </div>
-      {productData &&
-        displayCount < productData.length && ( // Display "Load More" button if there are more cards to load
-          <div className="load__more__container">
-            <Button onClick={handleLoadMore} className="load__more__button">
-              Load More
-            </Button>
-          </div>
-        )}
+      {productData && displayCount < productData.length && (
+        <div className="load__more container">
+          <Button onClick={handleLoadMore} className="load__more__button">
+            {productLoading ? "Loading..." : "Load More"}
+          </Button>
+        </div>
+      )}
     </div>
   );
 };

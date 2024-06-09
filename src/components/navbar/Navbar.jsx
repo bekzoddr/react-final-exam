@@ -8,7 +8,7 @@ import { BsCart } from "react-icons/bs";
 import icon from "../../assets/images/strategy__icon.svg";
 import cancel from "../../assets/images/cancel.svg";
 import menu from "../../assets/images/menu.svg";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -78,8 +78,12 @@ const Navbar = () => {
             )}
             <div className="links">
               {menuOpen ? <img width={19} src={icon} alt="nav__logo" /> : <></>}
-              <FaRegHeart className="nav__icon" />
-              <BsCart className="nav__icon" />
+              <Link to="/wishlist">
+                <FaRegHeart className="nav__icon" />
+              </Link>
+              <Link to="/cart">
+                <BsCart className="nav__icon" />
+              </Link>
             </div>
           </div>
           <div className="nav__search">

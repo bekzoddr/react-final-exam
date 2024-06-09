@@ -478,26 +478,3 @@
         }
     }
 }
-
-
-.search-results {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-top: none;
-    z-index: 999;
-}
-
-.searched__item {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-.searched__item h3 {
-    margin: 0;
-    font-size: 16px;
-    color: #333;
-}
