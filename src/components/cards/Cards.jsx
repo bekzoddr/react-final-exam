@@ -1,17 +1,10 @@
 import React, { useState } from "react";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
-import card1 from "../../assets/images/brand-1.svg";
-import card2 from "../../assets/images/brand-2.svg";
-import card3 from "../../assets/images/brand-3.svg";
-import card4 from "../../assets/images/brand-4.svg";
-import blogImage1 from "../../assets/images/blog-image1.svg";
-import blogImage2 from "../../assets/images/blog-image2.svg";
-import blogImage3 from "../../assets/images/blog-image3.svg";
+import { array, array2 } from "../../static";
+
 const Cards = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const array = [card1, card2, card3, card4];
-  const array2 = [blogImage1, blogImage2, blogImage3];
 
   const nextCard = () => {
     setCurrentIndex((prevIndex) =>

@@ -8,7 +8,15 @@ import infoImage1 from "../assets/images/info-1.svg";
 import infoImage2 from "../assets/images/info-2.svg";
 import infoImage3 from "../assets/images/info-3.svg";
 import infoImage4 from "../assets/images/info-4.svg";
-
+import card1 from "../assets/images/brand-1.svg";
+import card2 from "../assets/images/brand-2.svg";
+import card3 from "../assets/images/brand-3.svg";
+import card4 from "../assets/images/brand-4.svg";
+import blogImage1 from "../assets/images/blog-image1.svg";
+import blogImage2 from "../assets/images/blog-image2.svg";
+import blogImage3 from "../assets/images/blog-image3.svg";
+export const array = [card1, card2, card3, card4];
+export const array2 = [blogImage1, blogImage2, blogImage3];
 export const product = [
   {
     title: "iPhone 14 Pro Max",
