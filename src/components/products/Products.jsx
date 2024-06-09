@@ -43,33 +43,33 @@ const Products = () => {
         {productData ? (
           productData.map((item) => (
             <div key={item.id} className="product__card">
-              <Swiper
-                scrollbar={{
-                  hide: true,
-                }}
-                modules={[Scrollbar]}
-                className="product__image"
-              >
-                {item?.image ? (
-                  item.image.map((imgSrc, index) => (
-                    <SwiperSlide className="card__image" key={index}>
-                      <button>
-                        <FaRegHeart />
-                      </button>
-                      <img
-                        src={imgSrc}
-                        alt={`${item.title} image ${index + 1}`}
-                      />
-                    </SwiperSlide>
-                  ))
-                ) : (
-                  <Loading />
-                )}
-              </Swiper>
+              <Link to={`/detail/${item?.id}`}>
+                <Swiper
+                  scrollbar={{
+                    hide: true,
+                  }}
+                  modules={[Scrollbar]}
+                  className="product__image"
+                >
+                  {item?.image ? (
+                    item.image.map((imgSrc, index) => (
+                      <SwiperSlide className="card__image" key={index}>
+                        <button>
+                          <FaRegHeart />
+                        </button>
+                        <img
+                          src={imgSrc}
+                          alt={`${item.title} image ${index + 1}`}
+                        />
+                      </SwiperSlide>
+                    ))
+                  ) : (
+                    <Loading />
+                  )}
+                </Swiper>
+              </Link>
               <div className="card__body">
-                <Link to={`/detail/${item?.id}`}>
-                  <h2>{item.title}</h2>
-                </Link>
+                <h2>{item.title}</h2>
                 <div className="prices">
                   <s>
                     $
