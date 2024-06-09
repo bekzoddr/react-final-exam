@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { useCreateProductMutation } from "../../context/productsApi";
 import { useGetCategoriesQuery } from "../../context/categoryApi";
 import { toast } from "react-toastify";
+import { Button } from "@mui/material";
 
 const CreateProduct = () => {
   const {
@@ -101,16 +102,21 @@ const CreateProduct = () => {
             />
           </div>
         ))}
-        <button
+        <Button
+          variant="contained"
           className="add__image"
           type="button"
           onClick={handleAddImageUrl}
         >
           Add Image
-        </button>
-        <button type="submit" disabled={productLoading || categoriesLoading}>
+        </Button>
+        <Button
+          variant="contained"
+          type="submit"
+          disabled={productLoading || categoriesLoading}
+        >
           {productLoading ? "Creating..." : "Add"}
-        </button>
+        </Button>
       </form>
       {categoriesError && <p>Error loading categories...</p>}
     </div>
