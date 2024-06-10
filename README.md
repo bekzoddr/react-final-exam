@@ -1,1 +1,2 @@
 hamma pagela qilingan malumotlardan apidan rtk yordamida olingan addtocart detailsdayam ishlidi bot ulangan malumotlar to'ldirilganidan keyin cart empty bo'lib telegram botdan guruhga jo'natiladi loading qo'yilgan media bor homedan load more bor admin create category product va manage category produtc ishlidi apiga malumotlar qo'shiladi
+search ishlidi searchdan click bo'sa details page ga o'tadi productlada swiperdan foydalanilgan detailsda qo'lda custom qilingan rasmlaga bosilsa glavnisi bilan switch bo'ladi

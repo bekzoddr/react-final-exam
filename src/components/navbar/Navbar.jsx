@@ -127,6 +127,8 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
+          <br />
+          <br />
           <div className="nav__search">
             <input
               type="text"

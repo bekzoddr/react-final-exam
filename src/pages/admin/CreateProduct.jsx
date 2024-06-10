@@ -40,7 +40,6 @@ const CreateProduct = () => {
       image: image.filter((url) => url.trim() !== ""),
     };
 
-    // Validate the form inputs
     if (
       !newProduct.title ||
       !newProduct.description ||
@@ -55,7 +54,6 @@ const CreateProduct = () => {
     try {
       await createProduct(newProduct);
       toast.success("Product created successfully");
-      // Clear the form inputs
       title.current.value = "";
       description.current.value = "";
       price.current.value = "";
