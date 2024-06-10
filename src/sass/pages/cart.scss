@@ -105,6 +105,10 @@
 
     .cart__description {
         width: 180px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
     }
 
     .cart__image {
@@ -260,7 +264,6 @@
 
 @media (max-width: 1400px) {
 
-    /* Styles for screens up to 1400px */
     .cart__items__box {
         padding: 30px 40px;
 
@@ -358,122 +361,6 @@
             button {
                 width: 230px;
                 height: 45px;
-            }
-        }
-    }
-}
-
-/* Styles for screens up to 1300px */
-@media (max-width: 1300px) {
-    /* Adjust styles here */
-}
-
-/* Styles for screens up to 1200px */
-@media (max-width: 1200px) {
-    /* Adjust styles here */
-}
-
-/* Continue this pattern for further reductions in size */
-@media (max-width: 400px) {
-
-    /* Styles for screens up to 400px */
-    .cart__items__box {
-        padding: 20px;
-
-        .cart__title {
-            .cart__name {
-                margin-left: 20px;
-            }
-        }
-
-        .cart__calculator {
-            gap: 5px;
-
-            p {
-                width: 20px;
-                height: 20px;
-                padding: 3px;
-                font-size: 12px;
-            }
-
-            button {
-                font-size: 14px;
-            }
-        }
-
-        .cart__description {
-            width: 80px;
-        }
-    }
-
-    .cart__buy__box {
-        padding: 25px;
-
-        h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .form {
-
-            input,
-            textarea {
-                padding: 8px 12px;
-                font-size: 12px;
-                width: 200px;
-            }
-        }
-
-        .form__delivery {
-
-            input,
-            textarea {
-                width: 220px;
-                font-size: 12px;
-            }
-        }
-
-        .submit {
-            button {
-                width: 180px;
-                height: 35px;
-            }
-
-            input {
-                width: 15px;
-                height: 15px;
-            }
-
-            label {
-                font-size: 8px;
-            }
-        }
-    }
-
-    .all__carts {
-        padding: 25px;
-        margin-top: 30px;
-
-        span {
-            width: 150px;
-        }
-
-        h2,
-        b {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        b {
-            font-size: 18px;
-        }
-
-        .submit {
-            gap: 5px;
-
-            button {
-                width: 160px;
-                height: 30px;
             }
         }
     }
