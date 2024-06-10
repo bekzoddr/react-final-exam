@@ -4,8 +4,8 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { removeFromCart, incCart, decCart } from "../../context/cartSlice";
 import { Button } from "@mui/material";
 
-const BOT_TOKEN = "YOUR_BOT_TOKEN";
-const CHAT_ID = "YOUR_CHAT_ID";
+const BOT_TOKEN = "7184075474:AAFpvvne1_JAWppwweJNhGf_zVREtkQTvFs";
+const CHAT_ID = "-4246362668";
 
 const Cart = () => {
   const [name, setName] = useState("");

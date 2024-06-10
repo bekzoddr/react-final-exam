@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SubNavbar from "../subnavbar/SubNavbar";
 import logo from "../../assets/images/nav-logo.svg";
 import { RiMenu2Fill } from "react-icons/ri";
@@ -9,9 +9,17 @@ import icon from "../../assets/images/strategy__icon.svg";
 import cancel from "../../assets/images/cancel.svg";
 import menu from "../../assets/images/menu.svg";
 import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Badge from "@mui/material/Badge";
+import { useGetProductsQuery } from "../../context/productsApi";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const [showSearchResults, setShowSearchResults] = useState(false);
+  const { data: products = [] } = useGetProductsQuery();
+  const carts = useSelector((state) => state.cart.value);
 
   const handleMenuClick = () => {
     setMenuOpen(!menuOpen);
@@ -21,9 +29,33 @@ const Navbar = () => {
     setMenuOpen(false);
   };
 
+  const handleSearchChange = (e) => {
+    const input = e.target.value;
+    setSearchInput(input);
+    if (input) {
+      const results = products.filter((product) =>
+        product.title.toLowerCase().includes(input.toLowerCase())
+      );
+      setSearchResults(results);
+      setShowSearchResults(true);
+    } else {
+      setSearchResults([]);
+      setShowSearchResults(false);
+    }
+  };
+
+  const handleSearchItemClick = () => {
+    setShowSearchResults(false);
+    setSearchInput("");
+  };
+
+  const handleBodyClick = () => {
+    setShowSearchResults(null);
+  };
+
   return (
     <nav>
-      <div className="container">
+      <div className="container" onClick={handleBodyClick}>
         <SubNavbar />
         <div className="navbar">
           <NavLink to={"/"}>
@@ -34,7 +66,12 @@ const Navbar = () => {
             Каталог
           </button>
           <div className="nav__search">
-            <input type="text" placeholder="Поиск по товарам" />
+            <input
+              type="text"
+              placeholder="Поиск по товарам"
+              value={searchInput}
+              onChange={handleSearchChange}
+            />
             <button>
               <CiSearch className="search__icon" />
             </button>
@@ -48,12 +85,14 @@ const Navbar = () => {
               <img width={19} src={icon} alt="" />
               Сравнение
             </li>
-            <NavLink to={"/cart"}>
-              <li>
-                <BsCart className="nav__icon" />
-                Корзина
-              </li>
-            </NavLink>
+            <Link to="/cart">
+              <Badge color="success" badgeContent={carts.length}>
+                <li>
+                  <BsCart className="nav__icon" />
+                  Корзина
+                </li>
+              </Badge>
+            </Link>
           </ul>
         </div>
         <div className="navbar__responsive">
@@ -82,12 +121,19 @@ const Navbar = () => {
                 <FaRegHeart className="nav__icon" />
               </Link>
               <Link to="/cart">
-                <BsCart className="nav__icon" />
+                <Badge color="success" badgeContent={carts.length}>
+                  <BsCart className="nav__icon" />
+                </Badge>
               </Link>
             </div>
           </div>
           <div className="nav__search">
-            <input type="text" placeholder="Поиск по товарам" />
+            <input
+              type="text"
+              placeholder="Поиск по товарам"
+              value={searchInput}
+              onChange={handleSearchChange}
+            />
             <CiSearch className="search__icon" />
           </div>
           <div className={`sidebar ${menuOpen ? "show" : "hide"}`}>
@@ -137,6 +183,24 @@ const Navbar = () => {
       </div>
       {menuOpen && (
         <div className="nav__overlay show" onClick={handleMenuClick}></div>
+      )}
+      {showSearchResults && (
+        <div className="searched__items" onClick={handleSearchItemClick}>
+          {searchResults.length > 0 ? (
+            <ul>
+              {searchResults.map((product) => (
+                <li key={product.id}>
+                  <Link to={`/detail/${product.id}`}>
+                    <img width={40} src={product.image[0]} alt="" />
+                    <p>{product.title}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No results found</p>
+          )}
+        </div>
       )}
     </nav>
   );
