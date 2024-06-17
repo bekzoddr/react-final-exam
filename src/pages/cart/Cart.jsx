@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { removeFromCart, incCart, decCart } from "../../context/cartSlice";
 import { Button } from "@mui/material";
-
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import image from "../../assets/images/emty__cart.png";
 const BOT_TOKEN = "7184075474:AAFpvvne1_JAWppwweJNhGf_zVREtkQTvFs";
 const CHAT_ID = "-4246362668";
 
@@ -16,6 +18,11 @@ const Cart = () => {
   const [comment, setComment] = useState("");
 
   const handleOrder = () => {
+    if (!name || !lastName || !email || !phone || !address) {
+      toast.error("All fields are required.");
+      return;
+    }
+
     let text = "Buyurtma %0A%0A";
     text += `Ism: ${name} %0A`;
     text += `Familiya: ${lastName} %0A`;
@@ -45,6 +52,7 @@ const Cart = () => {
     setPhone("");
     setAddress("");
     setComment("");
+    toast.success("Order placed successfully.");
   };
 
   const cart = useSelector((state) => state.cart.value);
@@ -64,6 +72,7 @@ const Cart = () => {
 
   return (
     <div className="container">
+      <ToastContainer />
       <div className="cart">
         <div className="cart__items__box">
           <div className="cart__names">
@@ -109,7 +118,12 @@ const Cart = () => {
               </div>
             ))
           ) : (
-            <h2>Empty</h2>
+            <div className="emtpty__cart">
+              <img src={image} alt="image" />
+              <Button className="back" variant="contained" href="/">
+                Back to home
+              </Button>
+            </div>
           )}
         </div>
         {cart.length ? (

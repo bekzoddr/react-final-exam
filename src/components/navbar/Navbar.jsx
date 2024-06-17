@@ -128,7 +128,6 @@ const Navbar = () => {
             </div>
           </div>
           <br />
-          <br />
           <div className="nav__search">
             <input
               type="text"
@@ -184,7 +183,7 @@ const Navbar = () => {
         </div>
       </div>
       {menuOpen && (
-        <div className="nav__overlay show" onClick={handleMenuClick}></div>
+        <div className="search__overlay show" onClick={handleMenuClick}></div>
       )}
       {showSearchResults && (
         <div className="searched__items" onClick={handleSearchItemClick}>

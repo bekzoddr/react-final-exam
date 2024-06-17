@@ -20,12 +20,14 @@ const Products = () => {
   const wishes = useSelector((state) => state.wishlist.value) || [];
   const cart = useSelector((state) => state.cart.value);
   const [displayCount, setDisplayCount] = useState(8);
+  const [categoryValue, setCategoryValue] = useState("");
 
   const {
     data: categoriesData,
     isLoading: categoriesLoading,
     isError: categoriesError,
   } = useGetCategoriesQuery();
+
   const {
     data: productData,
     isLoading: productLoading,
@@ -44,18 +46,41 @@ const Products = () => {
     return <p>Error loading data...</p>;
   }
 
+  const filteredProduct = categoryValue
+    ? productData?.filter((el) => el.category === categoryValue)
+    : productData;
+
   return (
     <div className="container">
       <div className="product__categories">
+        <Button onClick={() => setCategoryValue("")}>All</Button>
         {categoriesData ? (
-          categoriesData.map((item) => <p key={item.id}>{item.title}</p>)
+          categoriesData.map((item) => (
+            <Button onClick={() => setCategoryValue(item.title)} key={item.id}>
+              {item.title}
+            </Button>
+          ))
         ) : (
           <p>Loading...</p>
         )}
       </div>
+      <div className="product__categories--mobile container">
+        <select
+          onChange={(e) => setCategoryValue(e.target.value)}
+          value={categoryValue}
+        >
+          <option value="">All</option>
+          {categoriesData &&
+            categoriesData.map((item) => (
+              <option key={item.id} value={item.title}>
+                {item.title}
+              </option>
+            ))}
+        </select>
+      </div>
       <div className="products">
-        {productData ? (
-          productData.slice(0, displayCount).map((item) => (
+        {filteredProduct?.length ? (
+          filteredProduct.slice(0, displayCount).map((item) => (
             <div key={item.id} className="product__card">
               <Swiper
                 scrollbar={{
@@ -111,11 +136,11 @@ const Products = () => {
             </div>
           ))
         ) : (
-          <Loading />
+          <p>No products found...</p>
         )}
       </div>
-      {productData && displayCount < productData.length && (
-        <div className="load__more container">
+      {filteredProduct && displayCount < filteredProduct.length && (
+        <div className="load__more">
           <Button onClick={handleLoadMore} className="load__more__button">
             {productLoading ? "Loading..." : "Load More"}
           </Button>

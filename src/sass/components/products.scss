@@ -145,7 +145,6 @@
     &:hover {
         img {
             transition: .3s ease-in-out;
-            // transform: scale(1.1);
         }
     }
 
@@ -199,38 +198,64 @@
 }
 
 .product__categories {
-    border-radius: 100px;
-    background: rgb(242, 242, 242);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 10px;
-    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
-    @media (max-width: 740px) {
-        p {
-            font-size: 10 px;
-        }
+.product__categories--mobile {
+    display: none;
+}
 
-        background-color: transparent;
-        flex-direction: column;
+@media (max-width: 768px) {
+    .product__categories {
+        display: none;
     }
 
-    p {
-        opacity: 0.5;
-        color: rgb(69, 69, 69);
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 22px;
-        letter-spacing: 0%;
-        text-align: left;
-        transition: .3s all ease-in-out;
-        cursor: pointer;
+    .product__categories--mobile {
+        display: block;
+        margin-bottom: 20px;
 
-        &:hover {
-            transition: .3s all ease-in-out;
-            color: black;
-            opacity: 1;
+        select {
+            width: 100%;
+            max-width: 600px;
         }
     }
 }
+
+// .product__categories {
+//     border-radius: 100px;
+//     background: rgb(242, 242, 242);
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     padding: 5px 10px;
+//     margin-bottom: 30px;
+
+//     @media (max-width: 740px) {
+//         p {
+//             font-size: 10 px;
+//         }
+
+//         background-color: transparent;
+//         flex-direction: column;
+//     }
+
+//     p {
+//         opacity: 0.5;
+//         color: rgb(69, 69, 69);
+//         font-size: 16px;
+//         font-weight: 600;
+//         line-height: 22px;
+//         letter-spacing: 0%;
+//         text-align: left;
+//         transition: .3s all ease-in-out;
+//         cursor: pointer;
+
+//         &:hover {
+//             transition: .3s all ease-in-out;
+//             color: black;
+//             opacity: 1;
+//         }
+//     }
+// }

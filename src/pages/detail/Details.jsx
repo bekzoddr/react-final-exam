@@ -96,9 +96,7 @@ const Details = () => {
               <FaWhatsapp className="apps__icon" />
             </div>
           </div>
-          <p className="product__price">
-            {product.price * productQuantity} руб.
-          </p>
+          <p className="product__price">{product.price} руб.</p>
 
           <p className="product__description">{product.description}</p>
           <div className="product__navigations">
